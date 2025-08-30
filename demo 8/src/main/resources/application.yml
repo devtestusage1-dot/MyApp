@@ -1,0 +1,83 @@
+server:
+  port: 8080
+
+management:
+  metrics:
+    enable:
+      hikari: true
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+# App config (change without code)
+monitoring:
+  actuator:
+    base-url: http://localhost:8080/actuator
+    timeout-ms: 3000
+  schedule:
+    cron: "0 * * * * *"   # every minute
+  metrics:
+    # name: metric name from /actuator/metrics; tags: optional tag filters
+    - name: system.cpu.usage
+    - name: process.cpu.usage
+    - name: application.ready.time
+    - name: application.started.time
+    - name: disk.free
+    - name: disk.total
+    - name: executor.active
+    - name: executor.completed
+    - name: executor.pool.core
+    - name: executor.pool.max
+    - name: executor.pool.size
+    - name: executor.queue.remaining
+    - name: executor.queued
+    - name: http.server.requests
+    - name: http.server.requests.active
+    - name: jvm.buffer.count
+    - name: jvm.buffer.memory.used
+    - name: jvm.buffer.total.capacity
+    - name: jvm.classes.loaded
+    - name: jvm.classes.unloaded
+    - name: jvm.compilation.time
+    - name: jvm.gc.concurrent.phase.time
+    - name: jvm.gc.live.data.size
+    - name: jvm.gc.max.data.size
+    - name: jvm.gc.memory.allocated
+    - name: jvm.gc.memory.promoted
+    - name: jvm.gc.overhead
+    - name: jvm.gc.pause
+    - name: jvm.info
+    - name: jvm.memory.committed
+    - name: jvm.memory.max
+    - name: jvm.memory.usage.after.gc
+    - name: jvm.memory.used
+    - name: jvm.threads.daemon
+    - name: jvm.threads.live
+    - name: jvm.threads.peak
+    - name: jvm.threads.started
+    - name: jvm.threads.states
+    - name: logback.events
+    - name: process.cpu.time
+    - name: process.cpu.usage
+    - name: process.files.max
+    - name: process.files.open
+    - name: process.start.time
+    - name: process.uptime
+    - name: system.cpu.count
+    - name: system.cpu.usage
+    - name: system.load.average.1m
+    - name: tasks.scheduled.execution
+    - name: tasks.scheduled.execution.active
+ # example; set to your pool name or remove
+
+logging:
+  level:
+    root: INFO
+    com.example.metricsmonitoring: INFO
+  file:
+    name: logs/metrics-monitoring.log
+

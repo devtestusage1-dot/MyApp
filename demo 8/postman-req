@@ -1,0 +1,28 @@
+CallStart :
+
+curl --location 'http://localhost:8080/event/publish' \
+--header 'Content-Type: application/json' \
+--data '{
+  "event_type": "call_start",
+  "call_id": "A7VV4GVT854GJ3M0V235CL46U0000JD",
+  "ANI": "6504494340",
+  "application_name": "cardtracker",
+  "timeStamp": "2025-08-11T03:44:22.684Z"
+}'
+
+
+CallExit :
+
+curl --location 'http://localhost:8080/event/publish' \
+--header 'Content-Type: application/json' \
+--data '{
+  "event_type": "CALL_EXIT",
+  "call_id": "12345-abcde-67890",
+  "ani": "9876543210",
+  "dnis": "1800123456",
+  "language": "en",
+  "duration": "350",
+  "exitReason": "USER_DISCONNECTED",
+  "prompt_id_AtExit": "PROMPT_101",
+  "prompt_description": "Goodbye prompt played before disconnect"
+}'
