@@ -1,0 +1,27 @@
+@Override
+    public String toString() {
+        return "StartEvent{" +
+                "eventType='" + getEventType() + '\'' +
+                ", callId='" + getCallId() + '\'' +
+                ", ani='" + getAni() + '\'' +
+                ", applicationName='" + getApplicationName() + '\'' +
+                ", timeStamp='" + getTimeStamp() + '\'' +
+                '}';
+    }
+
+
+@Override
+    public String toString() {
+        return "ExitEvent{" +
+                "eventType='" + getEventType() + '\'' +
+                ", callId='" + getCallId() + '\'' +
+                ", ani='" + getAni() + '\'' +
+                ", applicationName='" + getApplicationName() + '\'' +
+                ", timeStamp='" + getTimeStamp() + '\'' +
+                ", language='" + language + '\'' +
+                ", duration='" + duration + '\'' +
+                ", exitReason='" + exitReason + '\'' +
+                ", promptIdAtExit='" + promptIdAtExit + '\'' +
+                ", promptDescription='" + promptDescription + '\'' +
+                '}';
+    }
